@@ -1,0 +1,96 @@
+ /* Estilos generales */
+ body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff;
+    color: #333;
+}
+
+/* Encabezado */
+header {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 36px;
+    text-align: center;
+}
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    margin: 20px;
+    text-align: center;
+}
+
+/* Barra lateral */
+.sidebar {
+    width: 25%;
+    background-color: #0073e6;
+    padding: 15px;
+    color: white;
+    box-sizing: content-box;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.sidebar h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
+    text-align: center;
+}
+
+/* Sección principal */
+.main-content {
+    width: 75%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+    box-sizing:border-box;
+}
+
+.main-content h2 {
+    font-size: 28px;
+    color: #003366;
+}
+
+.main-content p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Pie de página */
+footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}

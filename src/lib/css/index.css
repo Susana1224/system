@@ -1,0 +1,62 @@
+
+
+/* Contenedor del formulario */
+.form-container {
+    background-color: rgba(255, 253, 253, 0.9); /* Fondo blanco con algo de transparencia */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    position: relative;
+}
+
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Contenedor de los logos */
+.logo-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px; /* Ajusta el margen inferior */
+}
+
+.logo-container img {
+    width: 80px; /* Tamaño de los logos, ahora más grandes */
+    height: auto;
+}
+
+/* Estilo de los campos del formulario */
+input[type="text"], input[type="tel"], input[type="email"], input[type="number"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #070707;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #666666;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #555555; /* Cambié el color de hover */
+}
+
+/* Mensaje de error (si es necesario) */
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: -10px;
+}

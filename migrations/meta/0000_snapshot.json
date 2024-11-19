@@ -1,0 +1,343 @@
+{
+  "id": "00000000-0000-0000-0000-000000000000",
+  "prevId": "",
+  "version": "6",
+  "dialect": "sqlite",
+  "tables": {
+    "users": {
+      "name": "users",
+      "columns": {
+        "id": {
+          "autoincrement": false,
+          "name": "id",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": false
+        },
+        "username": {
+          "autoincrement": false,
+          "name": "username",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "email": {
+          "autoincrement": false,
+          "name": "email",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "password": {
+          "autoincrement": false,
+          "name": "password",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "registration_date": {
+          "default": "(datetime('now', '-5 hours'))",
+          "autoincrement": false,
+          "name": "registration_date",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {}
+    },
+    "contact": {
+      "name": "contact",
+      "columns": {
+        "id": {
+          "autoincrement": false,
+          "name": "id",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": false
+        },
+        "first_name": {
+          "autoincrement": false,
+          "name": "first_name",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "second_name": {
+          "autoincrement": false,
+          "name": "second_name",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "last_name": {
+          "autoincrement": false,
+          "name": "last_name",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "gender": {
+          "autoincrement": false,
+          "name": "gender",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "email": {
+          "autoincrement": false,
+          "name": "email",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "age": {
+          "autoincrement": false,
+          "name": "age",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "delivery_date": {
+          "default": "(datetime('now', '-5 hours'))",
+          "autoincrement": false,
+          "name": "delivery_date",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {}
+    },
+    "themes": {
+      "name": "themes",
+      "columns": {
+        "id": {
+          "autoincrement": false,
+          "name": "id",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": false
+        },
+        "historia": {
+          "autoincrement": false,
+          "name": "historia",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "dibujo": {
+          "autoincrement": false,
+          "name": "dibujo",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "puntillismo": {
+          "autoincrement": false,
+          "name": "puntillismo",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "tangram": {
+          "autoincrement": false,
+          "name": "tangram",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "perspectiva": {
+          "autoincrement": false,
+          "name": "perspectiva",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "anatomia": {
+          "autoincrement": false,
+          "name": "anatomia",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "creatividad": {
+          "autoincrement": false,
+          "name": "creatividad",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {}
+    },
+    "levels": {
+      "name": "levels",
+      "columns": {
+        "id": {
+          "autoincrement": false,
+          "name": "id",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": false
+        },
+        "themes_id": {
+          "autoincrement": false,
+          "name": "themes_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {
+        "levels_themes_id_themes_id_fk": {
+          "name": "levels_themes_id_themes_id_fk",
+          "tableFrom": "levels",
+          "tableTo": "themes",
+          "columnsFrom": [
+            "themes_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "uniqueConstraints": {}
+    },
+    "user_levels": {
+      "name": "user_levels",
+      "columns": {
+        "users_id": {
+          "autoincrement": false,
+          "name": "users_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "levels_id": {
+          "autoincrement": false,
+          "name": "levels_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {
+        "user_levels_users_id_levels_id_pk": {
+          "columns": [
+            "users_id",
+            "levels_id"
+          ],
+          "name": "user_levels_users_id_levels_id_pk"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "user_levels_levels_id_levels_id_fk": {
+          "name": "user_levels_levels_id_levels_id_fk",
+          "tableFrom": "user_levels",
+          "tableTo": "levels",
+          "columnsFrom": [
+            "levels_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "user_levels_users_id_users_id_fk": {
+          "name": "user_levels_users_id_users_id_fk",
+          "tableFrom": "user_levels",
+          "tableTo": "users",
+          "columnsFrom": [
+            "users_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "uniqueConstraints": {}
+    },
+    "themes_users": {
+      "name": "themes_users",
+      "columns": {
+        "users_id": {
+          "autoincrement": false,
+          "name": "users_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "themes_id": {
+          "autoincrement": false,
+          "name": "themes_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {
+        "themes_users_users_id_themes_id_pk": {
+          "columns": [
+            "users_id",
+            "themes_id"
+          ],
+          "name": "themes_users_users_id_themes_id_pk"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "themes_users_themes_id_themes_id_fk": {
+          "name": "themes_users_themes_id_themes_id_fk",
+          "tableFrom": "themes_users",
+          "tableTo": "themes",
+          "columnsFrom": [
+            "themes_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "themes_users_users_id_users_id_fk": {
+          "name": "themes_users_users_id_users_id_fk",
+          "tableFrom": "themes_users",
+          "tableTo": "users",
+          "columnsFrom": [
+            "users_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "uniqueConstraints": {}
+    }
+  },
+  "enums": {},
+  "_meta": {
+    "schemas": {},
+    "tables": {},
+    "columns": {}
+  }
+}
